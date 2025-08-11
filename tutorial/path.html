@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <title>Path SVG</title>
     <style>
+        .svg-container {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
     </style>
 </head>
 <body>
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div class="svg-container">
         <svg width="200" height="200" viewBox="-100 -100 200 200">
             <path
                 d="M -70 0 L 70 0 L 30 -50 M 70 0 L 30 50"

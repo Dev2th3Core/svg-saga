@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smiley SVG</title>
+    <style>
+        .svg-container {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <body>
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div class="svg-container">
         <svg width="200" height="200" viewBox="-100 -100 200 200">
             <circle cx="0" cy="0" r="80" fill="none" stroke="black" stroke-width="10"/>
             <ellipse cx="-30" cy="-30" rx="10" ry="15" fill="black"/>
