@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gift Box SVG</title>
     <style>
+        .svg-container {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+
         .box {
             fill: #d1495b;
             stroke: black;
@@ -26,7 +33,7 @@
     </style>
 </head>
 <body>
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div class="svg-container">
         <svg width="200" height="200" viewBox="-100 -100 200 200">
             <circle cx="0" cy="-50" r="10" fill="#a9172a" />
             <rect class="box" x="-60" y="-40" width="120" height="100" />
