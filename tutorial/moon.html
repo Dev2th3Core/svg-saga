@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon SVG</title>
+    <style>
+        .svg-container {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+
+        .moon {
+            fill: #f0e68c;
+        }
+    </style>
+</head>
+<body>
+    <div class="svg-container">
+        <svg
+            class="moon"
+            width="200"
+            height="200"
+            viewBox="0 0 30 30"
+        >
+            <path
+                d="
+                M 23, 5
+                A 12 12 0 1 0 23, 25
+                A 12 12 0 0 1 23, 5"
+            />
+        </svg>
+
+    </div>
+</body>
+</html>
