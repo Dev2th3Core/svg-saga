@@ -15,11 +15,29 @@
 <body>
     <div class="svg-container">
         <svg width="200" height="200">
+            <defs>
+                <radialGradient
+                    id="shine"
+                    cx="0.25"
+                    cy="0.25"
+                    r="0.35"
+                >
+                <stop
+                    offset="0%"
+                    stop-color="#e3a8b0"
+                />
+                <stop
+                    offset="100%"
+                    stop-color="#D1495B"
+                />
+                </radialGradient>
+            </defs>
+
             <circle
                 cx="100"
                 cy="120"
                 r="70"
-                fill="#D1495B"
+                fill="url(#shine)"
             />
             <rect
                 x="82"
