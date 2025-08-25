@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Bulb SVG</title>
+    <style>
+        .svg-container {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+        #bulb {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="svg-container">
+        <svg
+            width="200"
+            height="200"
+            viewBox="-100 -100 200 200"
+        >
+            <path
+                id="bulb"
+                d="
+                M -30 20
+                A 50 50 0 1 1 30 20
+                Q 20 30 20 50
+                L -20 50
+                Q -20 30 -30 20"
+                fill="yellow"
+                stroke="black"
+                stroke-width="10"
+                stroke-linejoin="round"
+            />
+            <path
+                d="M -30 -20 A 30 30 0 0 1 0 -50"
+                fill="none"
+                stroke="black"
+                stroke-width="10"
+                stroke-linecap="round"
+            />
+            <path
+                d="M -18 62 L 18 62 M -15 75 L 15 75"
+                stroke="black"
+                stroke-width="10"
+                stroke-linecap="round"
+            />
+        </svg>
+    </div>
+
+    <script>
+        const bulb = document.getElementById("bulb");
+
+        let lightOn = true;
+
+        bulb.addEventListener("click", () => {
+            bulb.setAttribute("fill", lightOn ? "transparent" : "yellow");
+            lightOn = !lightOn;
+        });
+    </script>
+</body>
+</html>
