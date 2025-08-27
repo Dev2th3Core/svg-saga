@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow Forest SVG</title>
+    <style>
+        .svg-container {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+
+        .snowflake {
+            --duration: 5s;
+        }
+
+        .snowflake.fast {
+            --duration: 3s;
+        }
+
+        .snowflake {
+            animation-duration: var(--duration);
+            animation-name: snowing;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-delay: calc(-1 * var(--duration) * (var(--y) / 200));
+        }
+
+        @keyframes snowing {
+            from {
+                transform: translate(0, -100px);
+            }
+            to {
+                transform: translate(0, 100px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="svg-container">
+        <svg width="200" height="200" viewBox="-100 -100 200 200">
+            <clipPath id="snow-globe">
+                <circle cx="0" cy="0" r="80" />
+            </clipPath>
+
+            <g clip-path="url(#snow-globe)">
+                <!-- Background -->
+                <rect x="-100" y="-100" width="200" height="200" fill="#F1DBC3" />
+                <circle cx="0" cy="380" r="350" fill="#F8F4E8" />
+
+                <!-- Trees -->
+                <g transform="translate(-45, 40) scale(1.8)">
+                    <polygon points="-10,0 10,0 0,-50" fill="#38755b" />
+                    <line x2="0" y2="10" stroke="#778074" stroke-width="2" />
+                </g>
+
+                <g transform="translate(-15, 35) scale(1)">
+                    <polygon points="-10,0 10,0 0,-50" fill="#38755b" />
+                    <line x2="0" y2="10" stroke="#778074" stroke-width="2" />
+                </g>
+
+                <g transform="translate(20, 30) scale(0.8)">
+                    <polygon points="-10,0 10,0 0,-50" fill="#38755b" />
+                    <line x2="0" y2="10" stroke="#778074" stroke-width="2" />
+                </g>
+                
+                <g transform="translate(45, 35) scale(1.2)">
+                    <polygon points="-10,0 10,0 0,-50" fill="#38755b" />
+                    <line x2="0" y2="10" stroke="#778074" stroke-width="2" />
+                </g>
+
+                <!-- Snowflakes -->
+                <circle cx="0" cy="0" r="5" fill="white" class="snowflake fast" style="--y: 0;" />
+                <circle cx="-50" cy="0" r="5" fill="white" class="snowflake fast" style="--y: 120;" />
+                <circle cx="-30" cy="0" r="5" fill="white" class="snowflake fast" style="--y: 40;" />
+                <circle cx="50" cy="0" r="5" fill="white" class="snowflake fast" style="--y: 20;" />
+                <circle cx="30" cy="0" r="5" fill="white" class="snowflake" style="--y: 150;" />
+                <circle cx="-70" cy="0" r="5" fill="white" class="snowflake" style="--y: 80;" />
+                <circle cx="60" cy="0" r="5" fill="white" class="snowflake" style="--y: 150;" />
+                <circle cx="90" cy="0" r="5" fill="white" class="snowflake" style="--y: 80;" />
+                <circle cx="10" cy="0" r="3" fill="white" class="snowflake" style="--y: 50;" />
+                <circle cx="-50" cy="0" r="3" fill="white" class="snowflake" style="--y: 60;" />
+                <circle cx="-50" cy="0" r="3" fill="white" class="snowflake" style="--y: 170;" />
+                <circle cx="10" cy="0" r="3" fill="white" class="snowflake" style="--y: 80;" />
+            </g>
+
+            <circle
+                r="80"
+                fill="none"
+                stroke="gray"
+                stroke-width="2"
+            />
+        </svg>
+    </div>
+</body>
+</html>
