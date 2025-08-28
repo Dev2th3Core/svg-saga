@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poly Pong SVG</title>
+    <style>
+        .svg-container {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+        .polygon{
+            fill: none;
+            /* stroke-width: 5; */
+            stroke: black;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .pong{
+            offset-path: path("M 0 0 L -25 -25 L 25 -25 L -25 25 L 25 25 L 0 0");
+            animation: pong 1600ms infinite linear;
+        }
+
+        
+        @keyframes pong {
+            0% {
+                offset-distance: 0%;
+            }
+            100% {
+                offset-distance: 100%;
+            }
+        }
+
+        .pad1 {
+            stroke: black;
+            stroke-width: 5;
+            stroke-linecap: round;
+            animation: pad1 1610ms infinite linear;
+        }
+
+        @keyframes pad1 {
+            0% {
+                transform: translate(-3px, -5px);
+            }
+            50% {
+                transform: translate(-3px, 35px);
+            }
+            100% {
+                transform: translate(-3px, -5px);
+            }
+        }
+
+        .pad2 {
+            stroke: black;
+            stroke-width: 5;
+            stroke-linecap: round;
+            animation: pad2 1595ms infinite linear;
+        }
+
+        @keyframes pad2 {
+            0% {
+                transform: translate(3px, 5px);
+            }
+            50% {
+                transform: translate(3px, -35px);
+            }
+            100% {
+                transform: translate(3px, 5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="svg-container">
+        <svg width="200" height="200" viewBox="-100 -100 200 200">
+            <g transform="rotate(18)">
+                <polygon 
+                    class="polygon"
+                    stroke-width="2.5"
+                    points="27.81,-85.59
+                        72.81,-52.94
+                        90.00,0.00
+                        72.81,52.94
+                        27.81,85.59
+                        -27.81,85.59
+                        -72.81,52.94
+                        -90.00,0.00
+                        -72.81,-52.94
+                        -27.81,-85.59
+                        "
+                />
+            </g>
+            <g transform="scale(0.85)">
+                <polygon 
+                    class="polygon"
+                    stroke-width="3"
+                    points="34.47,-83.19
+                        83.19,-34.47
+                        83.19,34.47
+                        34.47,83.19
+                        -34.47,83.19
+                        -83.19,34.47
+                        -83.19,-34.47
+                        -34.47,-83.19
+                        "
+                />
+            </g>
+            <g transform="scale(0.7) rotate(30)">
+                <polygon 
+                    class="polygon"
+                    stroke-width="4"
+                    points="45.00,-77.94
+                        90.00,0.00
+                        45.00,77.94
+                        -45.00,77.94
+                        -90.00,0.00
+                        -45.00,-77.94
+                        "
+                />
+            </g>
+            <g transform="scale(0.55)">
+                <polygon 
+                    class="polygon"
+                    stroke-width="5"
+                    points="63.64,-63.64
+                        63.64,63.64
+                        -63.64,63.64
+                        -63.64,-63.64
+                        "
+                />
+            </g>
+            <path 
+                d="M 0 0
+                    L -25 -25
+                    L 25 -25
+                    L -25 25
+                    L 25 25
+                    L 0 0"
+                stroke-width="5"
+                stroke="white"
+                fill="none"
+            />
+            <circle 
+                class="pong"
+                cx="0" cy="0" r="5"
+                fill="black"
+            />
+            <line 
+                class="pad1"
+                x1="-25" y1="-25"
+                x2="-25" y2="-5"
+                stroke-width="5"
+                stroke="black"
+                stroke-linecap="round"
+            />
+            <line 
+                class="pad2"
+                x1="25" y1="5"
+                x2="25" y2="25"
+                stroke-width="5"
+                stroke="black"
+                stroke-linecap="round"
+            />
+        </svg>
+    </div>
+</body>
+</html>
